@@ -738,4 +738,37 @@ body {
         height: 45px;
         font-size: 1.1rem;
     }
+
+    /* INDICADOR DISCRETO DE VISTA EN LA ESQUINA */
+.visit-dot {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    width: 12px;
+    height: 12px;
+    background-color: #e74c3c; /* Rojo = Aún no se ha abierto en este equipo */
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.visit-dot.viewed {
+    background-color: #2ecc71; /* Verde = ¡Ya fue abierto y visto! */
+    box-shadow: 0 0 12px rgba(46, 204, 113, 0.6);
+}
+
+.visit-dot:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    white-space: nowrap;
+}
 }
